@@ -1,0 +1,344 @@
+﻿<Window x:Class="ObsRecordingManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ObsRecordingManagement"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="310pt" Width="510pt"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Padding="0">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+    </Window.Resources>
+    <Border Margin="10">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="1" Opacity="0.4" BlurRadius="10" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30pt"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Title bar-->
+            <Border Background="#9900cc" Padding="2" MouseDown="Border_MouseDown">
+                <TextBlock Text="OBS Recording Management"
+                       FontFamily="Fonts/#Lato"
+                       Foreground="White"
+                       FontSize="21pt"
+                       HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Row="1" Background="#fbebfc" Padding="10pt">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--User icon, name, next row-->
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Background="#660066" 
+                                Padding="5"
+                                Width="48"
+                                Height="48"
+                                CornerRadius="24">
+                            <!--User icon-->
+                            <TextBlock Text="SK"
+                                       FontFamily="Fonts/#Lato"
+                                       FontWeight="Bold"
+                                       Foreground="White"
+                                       FontSize="12pt"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="5 0">
+                            <!--User name-->
+                            <TextBox Text="Suman Karan"
+                                     FontFamily="Fonts/#Lato"
+                                     FontWeight="Light"
+                                     FontSize="18pt"
+                                     Grid.Column="1"/>
+                            <!--User details-->
+                            <TextBox Text="Student"
+                                   FontFamily="Fonts/#Lato"
+                                   FontWeight="Light"
+                                   FontSize="10pt"
+                                   Grid.Column="1"/>
+                        </StackPanel>
+
+                        <!--Next Button-->
+                        <!--<Button Grid.Column="2"
+                                Content="Next"
+                                Foreground="White"
+                                BorderThickness="0"
+                                FontFamily="Fonts/#Lato"
+                                FontWeight="Light"
+                                FontSize="14pt"
+                                Width="90pt">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#660066"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#400042"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}"
+                                            CornerRadius="6"
+                                            Padding="6 5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Border Background="#9900cc"
+                                                    Width="20pt"
+                                                    Height="20pt"
+                                                    Margin="0 0 5 0"/>
+
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Left"
+                                                              Grid.Column="1"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>-->
+                    </Grid>
+
+                    <!--Current class details-->
+                    <Border Background="White"
+                            Grid.Row="1"
+                            Padding="10"
+                            CornerRadius="8"
+                            Margin="0pt 10pt">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="1" Opacity="0.3" BlurRadius="6" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal" 
+                                        VerticalAlignment="Center">
+                                <!--Topic Name-->
+                                <TextBox Text="Business Combination"
+                                         FontFamily="Fonts/#Lato"
+                                         FontWeight="Light"
+                                         FontSize="18pt"/>
+                                <!--Class number-->
+                                <TextBox Text="04"
+                                         FontFamily="Fonts/#Lato"
+                                         FontWeight="Light"
+                                         FontSize="18pt"
+                                         Margin="10 0 0 0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Grid.Column="1">
+                                
+                                <!--Start Button-->
+                                <Button Width="26pt"
+                                        Height="26pt">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#660066"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#400042"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}"
+                                                    Padding="8"
+                                                    CornerRadius="20">
+                                                <Border Background="#9900cc"
+                                                        CornerRadius="20">
+                                                </Border>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                                <!--Pause Button-->
+                                <Button Width="26pt"
+                                        Height="26pt">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#660066"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#400042"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="8pt"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="8pt"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Border Background="{TemplateBinding Background}"/>
+                                                <Border Background="{TemplateBinding Background}" Grid.Column="2"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                                <!--Stop Button-->
+                                <Button Width="26pt"
+                                        Height="26pt">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#660066"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#400042"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}"
+                                                    Padding="6"
+                                                    CornerRadius="6">
+                                                <Border Background="#9900cc"
+                                                        CornerRadius="4">
+                                                </Border>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                                <!--Next Button-->
+                                <Button Grid.Column="2"
+                                        Content="Next"
+                                        Foreground="White"
+                                        BorderThickness="0"
+                                        FontFamily="Fonts/#Lato"
+                                        FontWeight="Light"
+                                        FontSize="14pt"
+                                        Width="90pt"
+                                        Margin="10 0 0 0">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#660066"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#400042"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}"
+                                            CornerRadius="6"
+                                            Padding="6 5">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Border Background="#9900cc"
+                                                            Width="20pt"
+                                                            Height="20pt"
+                                                            Margin="0 0 5 0"/>
+
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Left"
+                                                              Grid.Column="1"/>
+                                                </Grid>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    
+                    <!--Old classes-->
+                    <!--<ItemsControl>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="White"
+                                        Grid.Row="2"
+                                        Padding="10"
+                                        CornerRadius="8"
+                                        Margin="0pt 10pt">
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>-->
+
+                    <Border Background="White"
+                            Grid.Row="2"
+                            Padding="10"
+                            CornerRadius="8"
+                            Margin="0pt 10pt"
+                            Width="150pt"
+                            Height="70pt">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="1" Opacity="0.3" BlurRadius="6" />
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Business Combination"
+                                       FontFamily="Fonts/#Latto"
+                                       FontWeight="UltraLight"
+                                       FontSize="12pt"/>
+                            <TextBlock FontFamily="Fonts/#Latto"
+                                       FontWeight="UltraLight"
+                                       FontSize="12pt"
+                                       Grid.Row="1">
+                                <Run Text="Class "/><Run Text="03"/>
+                            </TextBlock>
+                            <Border Background="#660066"
+                                    Height="25pt"
+                                    Margin="-10 0 -10 -10"
+                                    
+                                    Grid.Row="3">
+
+                            </Border>
+                        </Grid>
+                        
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
